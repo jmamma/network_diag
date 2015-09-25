@@ -15,7 +15,7 @@ while [ $a -lt $N ]; do
     #ping=$(ping -c 1 $STORAGE_IP | grep "time=" | cut -f7 -d' ' | cut -f2 -d'=' | tr -d ' ')
     a=$(expr $a + 1)
     if [ "$(fcomp $ping .5)" == 1 ] && [ $detect -eq 0 ]; then
-        N=$(expr $a + 20)
+    #    N=$(expr $a + 20)
         detect=1
     fi  
     echo $date $ping | tee -a $LOG
